@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 //do müsse mr no luege wie das isch mit de anmeldedate für d DB
 $host = 'localhost'; // Host
@@ -44,7 +45,6 @@ $password = htmlspecialchars($_POST['password']);
     // passwort prüfen
     if(password_verify($password, $user['password'])){
       echo "Sie sind nun eingeloggt";
-      session_start();
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
       $username = $password = '';
