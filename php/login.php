@@ -5,7 +5,7 @@
 $host = 'localhost'; // Host
 $username = 'root'; // Username
 $password = ''; // Passwort
-$database = '133_praktikum'; // Datenbank
+$database = 'beta'; // Datenbank
 
 // mit Datenbank verbinden
 $mysqli = new mysqli($host, $username, $password, $database);
@@ -15,7 +15,7 @@ if ($mysqli->connect_error) {
   die('Connect Error (' . $mysqli->connect_errno . ') '. $mysqli->connect_error);
 }
 
-$username = htmlspecialchars($_POST['user']);
+$username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 
 
@@ -43,7 +43,8 @@ $password = htmlspecialchars($_POST['password']);
     $user = $result->fetch_assoc();
     // passwort prüfen
     if(password_verify($password, $user['password'])){
-      $message .= "Sie sind nun eingeloggt";
+      echo "Sie sind nun eingeloggt";
+      session_start();
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
       $username = $password = '';
@@ -51,10 +52,29 @@ $password = htmlspecialchars($_POST['password']);
       //Session starten und weiterleiten auf Adminbereich.
       // benutzername oder passwort stimmen nicht,
     } else {
-      $error .= "Benutzername oder Passwort sind falsch<br />";
+      echo "Benutzername oder Passwort sind falsch<br />";
     }
   } else {
-    $error .= "Benutzername oder Passwort sind falsch.<br />";
+    echo "Benutzername oder Passwort sind falsch.<br />";
   }
-
  ?>
+<html>
+  <head>
+    <title>Anmeldung</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Anmeldung</h1>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="username">Benutzername:</label>
+          <input type="text" name="username" class="form-control" id="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Passwort:</label>
+          <input type="password" name="password" class="form-control" id="password">
+        </div>
+        <input type="submit" name="submit" value="Anmelden">
+      </form>
+  </body>
+</html>
