@@ -27,7 +27,7 @@
       }
     }else{
       $_SESSION['type'] = 'signup';
-      $_SESSION['errMsg'] = 'Eingegebene Passwörter stimmen nicht überein!';
+      $_SESSION['errMsg'] = '<p class="errorMsg">Eingegebene Passwörter stimmen nicht überein!</p>';
       header('Location: ../pages/index.php');
     }
   }
