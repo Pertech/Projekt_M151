@@ -1,6 +1,7 @@
 <?php
+  session_start();
   if (isset($_POST['signup_firstname']) && isset($_POST['signup_lastname']) && isset($_POST['signup_username']) && isset($_POST['signup_email']) && isset($_POST['signup_password']) && isset($_POST['signup_password2'])) {
-    $mysqli = new mysqli("localhost", "root", "", "beta");
+    $mysqli = new mysqli("localhost", "root", "", "");
     if ($mysqli->connect_errno) {
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
     }
@@ -24,7 +25,10 @@
         $sql = "INSERT INTO users (firstname,lastname,username,password,email) VALUES ('$firstname', '$lastname', '$username', '$password', '$email')";
         $mysqli->query($sql);
       }
+    }else{
+      $_SESSION['type'] = 'signup';
+      $_SESSION['errMsg'] = 'Eingegebene Passwörter stimmen nicht überein!';
+      header('Location: ../pages/index.php');
     }
   }
-  header('Location: ../pages/index.html');
  ?>
