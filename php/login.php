@@ -16,8 +16,8 @@ if ($mysqli->connect_error) {
   die('Connect Error (' . $mysqli->connect_errno . ') '. $mysqli->connect_error);
 }
 
-$username = htmlspecialchars($_POST['username']);
-$password = htmlspecialchars($_POST['password']);
+$username = htmlspecialchars($_POST['login_username']);
+$password = htmlspecialchars($_POST['login_password']);
 
 
 
@@ -47,6 +47,7 @@ $password = htmlspecialchars($_POST['password']);
       echo "Sie sind nun eingeloggt";
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
+      $_SESSION['permissionLevel'] = $user['permissionLevel'];
       $username = $password = '';
       //header('Location: index.php');
       //Session starten und weiterleiten auf Adminbereich.
@@ -58,23 +59,3 @@ $password = htmlspecialchars($_POST['password']);
     echo "Benutzername oder Passwort sind falsch.<br />";
   }
  ?>
-<html>
-  <head>
-    <title>Anmeldung</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  </head>
-  <body>
-    <h1>Anmeldung</h1>
-      <form action="#" method="post">
-        <div class="form-group">
-          <label for="username">Benutzername:</label>
-          <input type="text" name="username" class="form-control" id="username">
-        </div>
-        <div class="form-group">
-          <label for="password">Passwort:</label>
-          <input type="password" name="password" class="form-control" id="password">
-        </div>
-        <input type="submit" name="submit" value="Anmelden">
-      </form>
-  </body>
-</html>
