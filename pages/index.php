@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
+  <?php
+  session_start();
+  ?>
   <div id="fback">
     <div class="pane_2">
       <img id="lead_2_img" src="../resources/rainbow.png" alt="Cover2">
@@ -24,10 +26,17 @@
 
       <div class="left">
         <div id="ic">
+          <?php
+            if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'signup'){
+              echo $_SESSION['errMsg'];
+              session_destroy();
+              $_SESSION = '';
+            }
+           ?>
           <h2 id="sign_h2">Sign Up</h2>
           <p>Sign up today and request a brand new key for your beta experience!</p>
 
-          <form id="sign_up_div" name="signup_form" method="post" enctype="multipart/form-data" action="">
+          <form id="sign_up_div" name="signup_form" method="post" enctype="multipart/form-data" action="../php/register.php">
 
             <div class="form-group">
               <label class="control-label" for="inputNormal">Username</label>
@@ -63,6 +72,11 @@
 
   <div class="right">
     <div id="ic">
+      <?php
+        if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'login'){
+          echo $_SESSION['errMsg'];
+        }
+       ?>
       <h2>Login</h2>
       <p>Welcome back!</p>
       <form name="login-form" id="sign_up_div" id="sidebar-user-login" method="post" action="">
