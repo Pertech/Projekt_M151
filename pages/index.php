@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+  <script type="text/javascript">
+    function asdf() {
+        var myElement = document.querySelector("#textbox");
+        myElement.style.marginLeft = "0";
+        var myElement2 = document.querySelector(".top");
+        myElement2.style.marginLeft = "100%";
+    }
+  </script>
   <?php
   session_start();
   ?>
@@ -29,6 +37,7 @@
           <?php
             if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'signup'){
               echo $_SESSION['errMsg'];
+              echo '<script>asdf();</script>';
               session_destroy();
               $_SESSION = '';
             }
@@ -101,6 +110,6 @@
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="../js/index.js"></script>
-  <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+  <!--<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>-->
 </body>
 </html>
