@@ -49,7 +49,7 @@ $password = htmlspecialchars($_POST['login_password']);
       $_SESSION['username'] = $username;
       $_SESSION['permissionLevel'] = $user['permissionLevel'];
       $username = $password = '';
-      //header('Location: index.php');
+      header('Location: ../pages/user_home.html');
       //Session starten und weiterleiten auf Adminbereich.
       // benutzername oder passwort stimmen nicht,
     } else {
