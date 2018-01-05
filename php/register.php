@@ -22,8 +22,11 @@
 
 
       if($result->num_rows == 0){
-        $sql = "INSERT INTO users (firstname,lastname,username,password,email) VALUES ('$firstname', '$lastname', '$username', '$password', '$email')";
-        $mysqli->query($sql);
+        $sql = "INSERT INTO users (firstname,lastname,username,password,email) VALUES ('?', '?', '?', '?', '?')";
+        $statement = $mysqli->prepare($sql);
+        $statement->bind_param('sssss', $firstname, $lastname, $username ,$password, $email);
+        $statement->execute();
+        //$mysqli->query($sql);
       }
     }else{
       $_SESSION['type'] = 'signup';

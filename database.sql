@@ -46,14 +46,14 @@ CREATE TABLE `betakeys` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `key` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `stateID` bigint(20) UNSIGNED NOT NULL,
-  `endDate` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `userID` bigint(20) UNSIGNED NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `requests` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `userID` bigint(20) UNSIGNED NOT NULL,
-  `accepted` boolean NOT NULL,
-  `date` DATE NOT NULL
+  `accepted` boolean NULL,
+  `date` DATE NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `users`
@@ -88,10 +88,14 @@ ALTER TABLE `betakeys`
   ADD CONSTRAINT FK_state
   FOREIGN KEY (stateID) REFERENCES keystate(id);
 
+ALTER TABLE `betakeys`
+  ADD CONSTRAINT FK_keyUser
+  FOREIGN KEY (userID) REFERENCES users(id);
+
 ALTER TABLE `requests`
   ADD CONSTRAINT FK_user
   FOREIGN KEY (userID) REFERENCES users(id);
 
 INSERT INTO keystate (state) VALUES ('not used');
 INSERT INTO keystate (state) VALUES ('used');
-INSERT INTO keystate (state) VALUES ('expired');
+INSERT INTO keystate (state) VALUES ('not active');

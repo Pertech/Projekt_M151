@@ -47,6 +47,7 @@ $password = htmlspecialchars($_POST['login_password']);
       echo "Sie sind nun eingeloggt";
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
+      $_SESSION['userID'] = $id;
       $_SESSION['permissionLevel'] = $user['permissionLevel'];
       $username = $password = '';
       header('Location: ../pages/user_home.html');
