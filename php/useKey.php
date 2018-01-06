@@ -16,19 +16,19 @@ if ($mysqli->connect_error) {
   die('Connect Error (' . $mysqli->connect_errno . ') '. $mysqli->connect_error);
 }
 
-$key = htmlspecialchars($_POST['key']);
+$key = htmlspecialchars($_POST['betakey']);
 
 
 
   // select statement erstellen
-  $query = "SELECT * from betakeys where key = ? and stateID = ?";
+  $query = "SELECT * from betakeys where betakey = ? and stateID = 1";
   // query vorbereiten
   $stmt = $mysqli->prepare($query);
   if($stmt===false){
     echo 'prepare() failed '. $mysqli->error;
   }
   // parameter an query binden
-  if(!$stmt->bind_param("si", $key, 1)){
+  if(!$stmt->bind_param("s", $key)){
     echo 'bind_param() failed '. $mysqli->error;
   }
   // query ausführen
@@ -42,9 +42,9 @@ $key = htmlspecialchars($_POST['key']);
     // userdaten lesen
     $user = $result->fetch_assoc();
 
-    $sql = "UPDATE betakeys SET stateID = ?, userID = ? WHERE key = ? AND stateID = ?";
+    $sql = "UPDATE betakeys SET stateID = 2, userID = ? WHERE betakey = ? AND stateID = 1";
     $statement = $mysqli->prepare($sql);
-    $statement->bind_param('iisi', 2, $_SESSION['userID'], $key, 1);
+    $statement->bind_param('is', $_SESSION['userID'], $key);
     $statement->execute();
 
     $sql = "UPDATE users SET hasGame = true WHERE id = ?";

@@ -16,7 +16,7 @@ if ($mysqli->connect_error) {
   die('Connect Error (' . $mysqli->connect_errno . ') '. $mysqli->connect_error);
 }
 
-$sql = "INSERT INTO requests (userID) VALUES ('?')";
+$sql = "INSERT INTO requests (userID) VALUES (?)";
 $statement = $mysqli->prepare($sql);
 $statement->bind_param('i', $_SESSION['userID']);
 $statement->execute();

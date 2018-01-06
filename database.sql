@@ -44,9 +44,9 @@ CREATE TABLE `keystate` (
 
 CREATE TABLE `betakeys` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `key` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `betakey` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `stateID` bigint(20) UNSIGNED NOT NULL,
-  `userID` bigint(20) UNSIGNED NULL,
+  `userID` bigint(20) UNSIGNED NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `requests` (

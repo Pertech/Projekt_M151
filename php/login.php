@@ -22,7 +22,7 @@ $password = htmlspecialchars($_POST['login_password']);
 
 
   // select statement erstellen
-  $query = "SELECT username, password from users where username = ?";
+  $query = "SELECT id, username, password from users where username = ?";
   // query vorbereiten
   $stmt = $mysqli->prepare($query);
   if($stmt===false){
@@ -44,19 +44,22 @@ $password = htmlspecialchars($_POST['login_password']);
     $user = $result->fetch_assoc();
     // passwort prüfen
     if(password_verify($password, $user['password'])){
-      echo "Sie sind nun eingeloggt";
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
-      $_SESSION['userID'] = $id;
+      $_SESSION['userID'] = $user['id'];
       $_SESSION['permissionLevel'] = $user['permissionLevel'];
       $username = $password = '';
       header('Location: ../pages/user_home.html');
       //Session starten und weiterleiten auf Adminbereich.
       // benutzername oder passwort stimmen nicht,
     } else {
-      echo "Benutzername oder Passwort sind falsch<br />";
+      $_SESSION['type'] = "login";
+      $_SESSION['errMsg'] = "Benutzername oder Passwort sind falsch";
+      header('Location: ../pages/index.php');
     }
   } else {
-    echo "Benutzername oder Passwort sind falsch.<br />";
+    $_SESSION['type'] = "login";
+    $_SESSION['errMsg'] = "Benutzername oder Passwort sind falsch";
+    header('Location: ../pages/index.php');
   }
  ?>

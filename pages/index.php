@@ -36,10 +36,8 @@
         <div id="ic">
           <?php
             if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'signup'){
-              echo $_SESSION['errMsg'];
-              echo '<script>asdf();</script>';
+              echo "<p>" . $_SESSION['errMsg'] . "</p>";
               session_destroy();
-              $_SESSION = '';
             }
            ?>
           <h2 id="sign_h2">Sign Up</h2>
@@ -83,12 +81,13 @@
     <div id="ic">
       <?php
         if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'login'){
-          echo $_SESSION['errMsg'];
+          echo "<p>" . $_SESSION['errMsg'] . "</p>";
+          session_destroy();
         }
        ?>
       <h2>Login</h2>
       <p>Welcome back!</p>
-      <form name="login-form" id="sign_up_div" id="sidebar-user-login" method="post" action="">
+      <form name="login-form" id="sign_up_div" id="sidebar-user-login" method="post" action="../php/login.php">
 
         <div class="form-group lg">
           <label class="control-label" for="inputNormal">Username</label>
