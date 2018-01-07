@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projekt M151 | Home</title>
+  <title>Projekt M151 | Request</title>
   <link rel="icon" href="../resources/icon_t.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/style_home.css">
@@ -17,8 +17,14 @@
     <div class="navbar">
         <a href="user_home.html">Home</a>
         <a href="contact.html">Contact</a>
+        <a id="requestBtn" href="acceptRequestTest.html">Request</a>
+        <a href="useKeyTest.html">Redeem</a>
     </div>
     <div class="content">
+      <form align="right" name="form1" method="post" action="logout.php">
+        <input name="submit" type="submit" id="submit" value="Log out">
+        </label>
+      </form>
       <form action="../php/acceptRequest.php" method="post">
         <input type="text" name="requestID" value="">
         <input type="submit" name="" value="ok">
