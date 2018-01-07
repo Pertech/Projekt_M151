@@ -9,16 +9,18 @@
   <link rel="stylesheet" href="../css/style_home.css">
 </head>
 <body>
-
+  <?php if ($_SESSION['loggedin'] == false) {
+    header('Location: ../pages/index.php');
+  } ?>
   <div id="sidebar_left">
     <img id="img_left" src="../resources/image_new.jpg" alt="">
   </div>
   <div id="content_container">
     <div class="navbar">
-        <a href="user_home.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <a id="requestBtn" href="acceptRequestTest.html">Request</a>
-        <a href="useKeyTest.html">Redeem</a>
+        <a href="user_home.php">Home</a>
+        <a href="contact.php">Contact</a>
+        <a id="requestBtn" href="acceptRequestTest.php">Request</a>
+        <a href="useKeyTest.php">Redeem</a>
     </div>
     <div class="content">
       <form align="right" name="form1" method="post" action="../php/logout.php">
