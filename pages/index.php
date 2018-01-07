@@ -35,7 +35,7 @@
       <div class="left">
         <div id="ic">
           <?php
-            if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'signup'){
+            if(isset($_SESSION['errMsg']) && isset($_SESSION['type']) && $_SESSION['type'] == 'signup'){
               echo "<p>" . $_SESSION['errMsg'] . "</p>";
               session_destroy();
             }
@@ -80,7 +80,7 @@
   <div class="right">
     <div id="ic">
       <?php
-        if(isset($_SESSION['errMsg']) && $_SESSION['type'] == 'login'){
+        if(isset($_SESSION['errMsg']) && isset($_SESSION['type']) && $_SESSION['type'] == 'login'){
           echo "<p>" . $_SESSION['errMsg'] . "</p>";
           session_destroy();
         }
