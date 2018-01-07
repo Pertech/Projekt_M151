@@ -29,7 +29,7 @@
         <input name="submit" type="submit" id="submit" value="Log out">
         </label>
       </form>
-      <h2>Hi <i><?php echo $username; ?></i></h2>
+      <h2>Hi <i><?php echo $_SESSION['username']; ?></i></h2>
       <p>
         Welcome to the beta hub of the <i>Grosser Autodiebstal Simulator</i>, we are glad that you found us.
         If you haven't already, you can request your beta key now. Enjoy and thanks for your feedback.
