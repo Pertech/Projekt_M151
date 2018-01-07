@@ -22,7 +22,7 @@ $password = htmlspecialchars($_POST['login_password']);
 
 
   // select statement erstellen
-  $query = "SELECT id, username, password from users where username = ?";
+  $query = "SELECT * from users where username = ?";
   // query vorbereiten
   $stmt = $mysqli->prepare($query);
   if($stmt===false){
