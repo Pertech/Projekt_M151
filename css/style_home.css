@@ -16,6 +16,14 @@ html, body {
   background: grey;
 }
 
+#changeBtn {
+  background: grey;
+}
+
+#manageBtn {
+  background: grey;
+}
+
 #sidebar_left {
     width: 20%;
     height: 100%;

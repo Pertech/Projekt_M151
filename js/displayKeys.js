@@ -8,7 +8,7 @@ function updateData(){
     var tableData = '<table class="table-striped"><tr><td>Id</td><td>Key</td></tr>';
     var items = [];
     $.each(data, function( key, val ) {
-      tableData += '<tr><td>'+val.id+'</td><td>'+val.betakey+'</td><td><button onclick="removeKey(' + val.id + ')"></button></td></tr>';
+      tableData += '<tr><td>'+val.id+'</td><td>'+val.betakey+'</td><td><button onclick="removeKey(' + val.id + ')">remove</button></td></tr>';
     });
     tableData += '</table>';
     $('.content').html(tableData);
@@ -16,5 +16,7 @@ function updateData(){
 }
 
 function removeKey(id){
-  $.post("test.php", { name: "John", time: "2pm" } );
+  $.post("../php/removeKey.php", { keyID: id }, function(){
+    updateData();
+  });
 }

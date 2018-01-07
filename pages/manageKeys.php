@@ -20,10 +20,17 @@
   </div>
   <div id="content_container">
     <div class="navbar">
-        <a href="user_home.php">Home</a>
-        <a href="contact.php">Contact</a>
-        <a href="requestKey.php">Request</a>
-        <a href="useKeyTest.php">Redeem</a>
+      <a href="user_home.php">Home</a>
+      <a href="contact.php">Contact</a>
+      <a href="requestKey.php">Request</a>
+      <a href="useKey.php">Redeem</a>
+      <a href="changePassword.php">Change Password</a>
+      <?php
+      if($_SESSION['permissionLevel'] >= 50){
+        echo '<a id="manageBtn" href="manageKeys.php">Manage Keys</a>';
+        echo '<a href="manageRequests.php">Manage Requests</a>';
+      }
+      ?>
     </div>
     <div class="content">
 

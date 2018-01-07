@@ -52,7 +52,11 @@ $key = htmlspecialchars($_POST['betakey']);
     $statement->bind_param('i', $_SESSION['userID']);
     $statement->execute();
 
-  } else {
+    $_SESSION['errMsg'] = "Erfolgreich aktiviert.";
+    header('Location: ../pages/useKey.php');
 
+  } else {
+    $_SESSION['errMsg'] = "Der Key ist nicht gültig.";
+    header('Location: ../pages/useKey.php');
   }
  ?>

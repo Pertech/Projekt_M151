@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projekt M151 | Redeem</title>
   <link rel="icon" href="../resources/icon_t.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/style_home.css">
 </head>
@@ -22,16 +23,32 @@
         <a href="user_home.php">Home</a>
         <a href="contact.php">Contact</a>
         <a href="requestKey.php">Request</a>
-        <a id="redeemBtn" href="useKeyTest.php">Redeem</a>
+        <a id="redeemBtn" href="useKey.php">Redeem</a>
+        <a href="changePassword.php">Change Password</a>
+        <?php
+        if($_SESSION['permissionLevel'] >= 50){
+          echo '<a href="manageKeys.php">Manage Keys</a>';
+          echo '<a href="manageRequests.php">Manage Requests</a>';
+        }
+        ?>
     </div>
     <div class="content">
       <form align="right" name="form1" method="post" action="../php/logout.php">
         <input name="submit" type="submit" id="submit" value="Log out">
         </label>
       </form>
+      <?php
+        if (isset($_SESSION['errMsg'])) {
+          echo "<p>" . $_SESSION['errMsg'] . "</p>";
+          $_SESSION['errMsg'] = '';
+        }
+       ?>
       <form action="../php/useKey.php" method="post">
-        <input type="text" name="betakey" value="">
-        <input type="submit" name="" value="ok">
+        <div class="form-group">
+          <label class="control-label" for="inputNormal">Key</label>
+          <input type="text" name="betakey" id="betakey" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+        </div>
+        <input type="submit" name="" value="use">
       </form>
     </div>
   </div>

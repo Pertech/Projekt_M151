@@ -49,7 +49,6 @@
       $statement->execute();
 
     } else {
-      echo "Benutzername oder Passwort sind falsch.<br />";
     }
   } else {
     echo "Keine Berechtigung!";
