@@ -35,6 +35,8 @@ $key = htmlspecialchars($_POST['betakey']);
     echo 'execute() failed '. $mysqli->error;
   }
 
+  $result = $stmt->get_result();
+
   if($result->num_rows){
 
     $sql = "UPDATE betakeys SET stateID = 2, userID = ? WHERE betakey = ? AND stateID = 1";

@@ -1,7 +1,7 @@
 <?php
 
   session_start();
-  
+
   /*
     Überprüft die Berechtigungen
   */
@@ -39,6 +39,8 @@
       echo 'execute() failed '. $mysqli->error;
     }
 
+    $result = $stmt->get_result();
+    
     if($result->num_rows){
 
       $sql = "UPDATE betakeys SET stateID = 3 where id = ?";

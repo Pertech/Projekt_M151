@@ -39,6 +39,8 @@
       echo 'execute() failed '. $mysqli->error;
     }
 
+    $result = $stmt->get_result();
+    
     if($result->num_rows){
       /*
         Updated den Request
