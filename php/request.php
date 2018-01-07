@@ -21,4 +21,6 @@ $statement = $mysqli->prepare($sql);
 $statement->bind_param('i', $_SESSION['userID']);
 $statement->execute();
 
+header('Location: ../pages/requestKey.php');
+
 ?>

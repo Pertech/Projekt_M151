@@ -21,7 +21,7 @@
     <div class="navbar">
       <a href="user_home.php">Home</a>
       <a id="contactBtn" href="contact.php">Contact</a>
-      <a href="acceptRequestTest.php">Request</a>
+      <a href="requestKey.php">Request</a>
       <a href="useKeyTest.php">Redeem</a>
     </div>
     <div class="content">
