@@ -39,7 +39,7 @@
       echo 'execute() failed '. $mysqli->error;
     }
 
-    $result = $stmt->get_result();
+    $result = $statement->get_result();
 
     if($result->num_rows){
       /*
