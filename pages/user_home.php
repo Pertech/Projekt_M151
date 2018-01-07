@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../css/style_home.css">
 </head>
 <body>
-  <?php if ($_SESSION['loggedin'] == false) {
+  <?php if ($_SESSION['loggedin'] != true) {
     header('Location: ../pages/index.php');
   } ?>
   <div id="sidebar_left">
