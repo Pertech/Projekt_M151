@@ -11,7 +11,7 @@ if(isset($_POST['newPassword1']) && !empty(trim($_POST['newPassword1']))){
   }
 } else {
   // Ausgabe Fehlermeldung
-  $_SESSION['errMsg'] .= "Geben Sie bitte einen korrekten Nachnamen ein.<br />";
+  $_SESSION['errMsg'] .= "Geben Sie bitte ein korrektes Passwort ein.<br />";
 }
 
 if ($_SESSION['errMsg'] == '') {
@@ -54,6 +54,7 @@ if ($_SESSION['errMsg'] == '') {
     // benutzer vorhanden?
     if($result->num_rows){
       // passwort prüfen
+      $user = $result->fetch_assoc();
       if(password_verify($oldPassword, $user['password'])){
 
         $password = password_hash($newPassword1, PASSWORD_DEFAULT);

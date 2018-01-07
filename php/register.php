@@ -61,7 +61,7 @@ $firstname = $lastname = $email = $username = '';
       }
     } else {
       // Ausgabe Fehlermeldung
-      $_SESSION['errMsg'] .= "Geben Sie bitte einen korrekten Nachnamen ein.<br />";
+      $_SESSION['errMsg'] .= "Geben Sie bitte ein korrektes Passwort ein.<br />";
     }
   }
 
