@@ -2,8 +2,11 @@
 
   session_start();
 
+  /*
+    Überprüft die Berechtigungen
+  */
   if($_SESSION['permissionLevel'] >= 50){
-    //do müsse mr no luege wie das isch mit de anmeldedate für d DB
+
     $host = 'localhost'; // Host
     $username = 'root'; // Username
     $password = ''; // Passwort
@@ -35,14 +38,11 @@
     if(!$stmt->execute()){
       echo 'execute() failed '. $mysqli->error;
     }
-    // daten auslesen
-    $result = $stmt->get_result();
-    // benutzer vorhanden?
-    if($result->num_rows){
-      // userdaten lesen
-      $user = $result->fetch_assoc();
-      // passwort prüfen
 
+    if($result->num_rows){
+      /*
+        Updated den Request
+      */
       $sql = "UPDATE requests SET accepted = false, date = ? where id = ?";
       $statement = $mysqli->prepare($sql);
       $statement->bind_param('si', date("Y-m-d"), $requestID);

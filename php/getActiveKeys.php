@@ -2,8 +2,11 @@
 
 session_start();
 
+  /*
+    Überprüft die Berechtigungen
+  */
   if($_SESSION['permissionLevel'] >= 50){
-    //do müsse mr no luege wie das isch mit de anmeldedate für d DB
+
     $host = 'localhost'; // Host
     $username = 'root'; // Username
     $password = ''; // Passwort
@@ -19,7 +22,6 @@ session_start();
 
     $sql = "SELECT id, betakey FROM betakeys WHERE stateID = 1";
     $statement = $mysqli->prepare($sql);
-    //$statement->bind_param('i', $_SESSION['userID']);
     $statement->execute();
     $result = $statement->get_result();
     while($row = $result->fetch_assoc()) {

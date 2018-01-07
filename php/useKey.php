@@ -2,7 +2,6 @@
 
 session_start();
 
-//do müsse mr no luege wie das isch mit de anmeldedate für d DB
 $host = 'localhost'; // Host
 $username = 'root'; // Username
 $password = ''; // Passwort
@@ -35,12 +34,8 @@ $key = htmlspecialchars($_POST['betakey']);
   if(!$stmt->execute()){
     echo 'execute() failed '. $mysqli->error;
   }
-  // daten auslesen
-  $result = $stmt->get_result();
-  // benutzer vorhanden?
+
   if($result->num_rows){
-    // userdaten lesen
-    $user = $result->fetch_assoc();
 
     $sql = "UPDATE betakeys SET stateID = 2, userID = ? WHERE betakey = ? AND stateID = 1";
     $statement = $mysqli->prepare($sql);

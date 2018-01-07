@@ -2,7 +2,6 @@
 
 session_start();
 
-//do müsse mr no luege wie das isch mit de anmeldedate für d DB
 $host = 'localhost'; // Host
 $username = 'root'; // Username
 $password = ''; // Passwort

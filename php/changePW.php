@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 $_SESSION['errMsg'] = '';
 if(isset($_POST['newPassword1']) && !empty(trim($_POST['newPassword1']))){
   $newPassword1 = trim($_POST['newPassword1']);
@@ -15,7 +16,6 @@ if(isset($_POST['newPassword1']) && !empty(trim($_POST['newPassword1']))){
 
 if ($_SESSION['errMsg'] == '') {
 
-  //do müsse mr no luege wie das isch mit de anmeldedate für d DB
   $host = 'localhost'; // Host
   $username = 'root'; // Username
   $password = ''; // Passwort
@@ -53,8 +53,6 @@ if ($_SESSION['errMsg'] == '') {
     $result = $stmt->get_result();
     // benutzer vorhanden?
     if($result->num_rows){
-      // userdaten lesen
-      $user = $result->fetch_assoc();
       // passwort prüfen
       if(password_verify($oldPassword, $user['password'])){
 

@@ -1,9 +1,11 @@
 <?php
 
 session_start();
-
+  /*
+    Überprüft die Berechtigungen
+  */
   if($_SESSION['permissionLevel'] >= 50){
-    //do müsse mr no luege wie das isch mit de anmeldedate für d DB
+
     $host = 'localhost'; // Host
     $username = 'root'; // Username
     $password = ''; // Passwort
@@ -19,7 +21,6 @@ session_start();
 
     $sql = "SELECT r.id, u.username FROM requests as r LEFT JOIN users as u on u.id = r.userID WHERE accepted IS NULL";
     $statement = $mysqli->prepare($sql);
-    //$statement->bind_param('i', $_SESSION['userID']);
     $statement->execute();
     $result = $statement->get_result();
     while($row = $result->fetch_assoc()) {

@@ -2,9 +2,11 @@
 
   session_start();
 
-
+  /*
+    Überprüft die Berechtigungen
+  */
   if($_SESSION['permissionLevel'] >= 50){
-    //do müsse mr no luege wie das isch mit de anmeldedate für d DB
+
     $host = 'localhost'; // Host
     $username = 'root'; // Username
     $password = ''; // Passwort
@@ -24,31 +26,31 @@
     // select statement erstellen
     $query = "SELECT * from requests where id = ?";
     // query vorbereiten
-    $stmt = $mysqli->prepare($query);
-    if($stmt===false){
+    $statement = $mysqli->prepare($query);
+    if($statement===false){
       echo 'prepare() failed '. $mysqli->error;
     }
     // parameter an query binden
-    if(!$stmt->bind_param("i", $requestID)){
+    if(!$statement->bind_param("i", $requestID)){
       echo 'bind_param() failed '. $mysqli->error;
     }
     // query ausführen
-    if(!$stmt->execute()){
+    if(!$statement->execute()){
       echo 'execute() failed '. $mysqli->error;
     }
-    // daten auslesen
-    $result = $stmt->get_result();
-    // benutzer vorhanden?
-    if($result->num_rows){
-      // userdaten lesen
-      $user = $result->fetch_assoc();
-      // passwort prüfen
 
+    if($result->num_rows){
+      /*
+        Updated den Request
+      */
       $sql = "UPDATE requests SET accepted = true, date = ? where id = ?";
       $statement = $mysqli->prepare($sql);
       $statement->bind_param('si', date("Y-m-d"), $requestID);
       $statement->execute();
 
+      /*
+        Fügt den Key ein
+      */
       $sql = "INSERT INTO betakeys (betakey, stateID) VALUES (?, 1)";
       $statement = $mysqli->prepare($sql);
       $key = generateRandomString();
@@ -61,7 +63,10 @@
   } else {
     echo "Keine Berechtigung!";
   }
-  
+
+  /*
+    Erstellt einen Key
+  */
   function generateRandomString($length = 15) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

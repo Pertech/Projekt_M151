@@ -95,7 +95,6 @@ $firstname = $lastname = $email = $username = '';
         $statement = $mysqli->prepare($sql);
         $statement->bind_param('sssss', $firstname, $lastname, $username ,$password, $email);
         $statement->execute();
-        //$mysqli->query($sql);
       }
     }else{
       $_SESSION['type'] = 'signup';
