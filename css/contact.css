@@ -53,6 +53,10 @@ html, body {
   text-align: center;
 }
 
+#contactBtn {
+  background: grey;
+}
+
 #sidebar_right {
   background: green;
   position: fixed;

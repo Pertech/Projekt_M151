@@ -4,6 +4,18 @@ html, body {
     font-family: Roboto;
 }
 
+#homeBtn {
+  background: grey;
+}
+
+#requestBtn {
+  background: grey;
+}
+
+#redeemBtn {
+  background: grey;
+}
+
 #sidebar_left {
     width: 20%;
     height: 100%;
