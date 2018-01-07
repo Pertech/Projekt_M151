@@ -33,7 +33,7 @@
         ?>
     </div>
     <div class="content">
-      <form align="right" name="form1" method="post" action="../php/changePW.php">
+      <form align="right" name="form1" method="post" action="../php/logout.php">
         <input name="submit" type="submit" id="submit" value="Log out">
         </label>
       </form>
