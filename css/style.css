@@ -82,7 +82,7 @@ h2 {
 }
 
 .form-control:focus::-webkit-input-placeholder {
-    -webkit-transition: none
+    -webkit-transition: none;
     -moz-transition: none;
     transition: none;
 }
@@ -387,10 +387,6 @@ form#login .su {
   transition-property: background-color;
   border: 0;
   outline: 0;
-}
-
-#moveright:hover {
-  background:
 }
 
 #moveleft:hover {
