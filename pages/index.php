@@ -37,6 +37,8 @@
           <?php
             if(isset($_SESSION['errMsg']) && isset($_SESSION['type']) && $_SESSION['type'] == 'signup'){
               echo "<p>" . $_SESSION['errMsg'] . "</p>";
+              // ruft die funktion oben auf, damit beim neuladen der seite automatisch wieder der Registrieungs-Screen angezeigt wird
+              echo "<script>asdf()</script>";
               session_destroy();
             }
            ?>
