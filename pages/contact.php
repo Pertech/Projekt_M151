@@ -36,6 +36,8 @@
         <input name="submit" type="submit" id="submit" value="Log out">
         </label>
       </form>
+
+      <p>This is a very interesting page.</p>
     </div>
   </div>
   <div id="sidebar_right">

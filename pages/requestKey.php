@@ -37,7 +37,7 @@
         </label>
       </form>
       <form action="../php/request.php" method="post">
-        <input type="submit" name="" value="Request">
+        <input type="submit" name="" value="Request Key">
       </form>
     </div>
   </div>

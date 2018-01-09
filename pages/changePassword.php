@@ -56,7 +56,7 @@
            <label class="control-label" for="inputNormal">Reenter new password</label>
            <input type="password" name="newPassword2" class="bp-suggestions form-control" cols="50" rows="10" required></input>
         </div>
-        <input type="submit" name="" value="ok">
+        <input type="submit" name="" value="Submit">
       </form>
     </div>
   </div>

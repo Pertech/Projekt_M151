@@ -48,7 +48,7 @@
           <label class="control-label" for="inputNormal">Key</label>
           <input type="text" name="betakey" id="betakey" class="bp-suggestions form-control" cols="50" rows="10" required></input>
         </div>
-        <input type="submit" name="" value="use">
+        <input type="submit" name="" value="Redeem Key">
       </form>
     </div>
   </div>
