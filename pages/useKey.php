@@ -49,7 +49,7 @@
           <input type="text" name="betakey" id="betakey" class="bp-suggestions form-control" cols="50" rows="10"
           maxlength="15"
           pattern="[a-zA-Z0-9]{15}"
-          title="Gross- und Keinbuchstaben, min 6 Zeichen."required></input>
+          title="Gross- und Keinbuchstaben und Zahlen, genau 15 Zeichen."required></input>
         </div>
         <input type="submit" name="" value="Redeem Key">
       </form>
