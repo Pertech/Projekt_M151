@@ -95,6 +95,7 @@ $firstname = $lastname = $email = $username = '';
         $statement = $mysqli->prepare($sql);
         $statement->bind_param('sssss', $signup_firstname, $signup_lastname, $signup_username ,$signup_password, $signup_email);
         $statement->execute();
+        $_SESSION['regSuccessfull'] = true;
         header('Location: ../pages/index.php');
       } else {
         $_SESSION['type'] = 'signup';

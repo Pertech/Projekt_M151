@@ -84,6 +84,10 @@
           echo "<p>" . $_SESSION['errMsg'] . "</p>";
           session_destroy();
         }
+        if(isset($_SESSION['regSuccessfull']) && $_SESSION['regSuccessfull'] == true){
+          echo "<p> Erfolgreich registriert! </p>";
+          session_destroy();
+        }
        ?>
       <h2>Login</h2>
       <p>Welcome back!</p>
