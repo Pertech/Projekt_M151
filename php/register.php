@@ -68,7 +68,7 @@ $firstname = $lastname = $email = $username = '';
 
 
 
-  if ($_SESSION['errMsg'] != '') {
+  if ($_SESSION['errMsg'] == '') {
     $host = 'localhost'; // Host
     $username = 'root'; // Username
     $password = ''; // Passwort
