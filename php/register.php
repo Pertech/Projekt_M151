@@ -32,7 +32,7 @@ $firstname = $lastname = $email = $username = '';
     if(isset($_POST['signup_email']) && !empty(trim($_POST['signup_email'])) && strlen(trim($_POST['signup_email']) <= 100)){
       $signup_email = htmlspecialchars(trim($_POST['signup_email']));
       // korrekte emailadresse?
-      if (filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+      if (filter_var($signup_email, FILTER_VALIDATE_EMAIL) === false){
         $_SESSION['errMsg'] .= "Geben Sie bitte eine korrekte Email-Adresse ein<br />";
       }
     } else {
