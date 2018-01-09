@@ -10,7 +10,7 @@
 </head>
 <body>
   <script type="text/javascript">
-    function asdf() {
+    function goToRegister() {
         var myElement = document.querySelector("#textbox");
         myElement.style.marginLeft = "0";
         var myElement2 = document.querySelector(".top");
@@ -38,7 +38,7 @@
             if(isset($_SESSION['errMsg']) && isset($_SESSION['type']) && $_SESSION['type'] == 'signup'){
               echo "<p>" . $_SESSION['errMsg'] . "</p>";
               // ruft die funktion oben auf, damit beim neuladen der seite automatisch wieder der Registrieungs-Screen angezeigt wird
-              echo "<script>asdf()</script>";
+              echo "<script>goToRegister()</script>";
               session_destroy();
             }
            ?>
