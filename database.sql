@@ -25,6 +25,9 @@ SET time_zone = "+00:00";
 --
 -- Tabellenstruktur für Tabelle `users`
 --
+CREATE DATABASE beta;
+
+USE beta;
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
