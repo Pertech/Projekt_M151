@@ -46,15 +46,15 @@
       <form action="../php/changePW.php" method="post">
         <div class="form-group">
            <label class="control-label" for="inputNormal">Old password</label>
-           <input type="password" name="oldPassword" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+           <input type="password" name="oldPassword" class="bp-suggestions form-control" cols="50" rows="10" required></input>
         </div>
         <div class="form-group">
            <label class="control-label" for="inputNormal">New password</label>
-           <input type="password" name="newPassword1" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+           <input type="password" name="newPassword1" class="bp-suggestions form-control" cols="50" rows="10" required></input>
         </div>
         <div class="form-group">
            <label class="control-label" for="inputNormal">Reenter new password</label>
-           <input type="password" name="newPassword2" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+           <input type="password" name="newPassword2" class="bp-suggestions form-control" cols="50" rows="10" required></input>
         </div>
         <input type="submit" name="" value="ok">
       </form>
@@ -65,6 +65,6 @@
   </div>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script type="text/javascript" src="../js/js_home.js"></script>
+  <!-- <script type="text/javascript" src="../js/js_home.js"></script> -->
 </body>
 </html>

@@ -166,13 +166,46 @@ form#sign_up_div input {
     -webkit-transition: border .2s;
 }
 
+form#login_div input {
+    border-bottom: 1px solid #cdcdcd;
+    color: #959595;
+    font-size: 14px;
+    width: 100%;
+    resize: none;
+    max-height: 20px;
+    outline: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 8px 0;
+    margin-top: 20px !important;
+    background: none;
+    border-top: 0;
+    overflow: hidden;
+    transition: border .2s;
+    -webkit-transition: border .2s;
+}
+
 #sign_up_div .form-group {
     width: 100%;
     float: left;
     margin-bottom: 20px;
 }
 
+#login_div .form-group {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+
 #sign_up_div h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #141414;
+    line-height: 35px;
+}
+
+#login_div h2 {
     font-size: 28px;
     font-weight: 400;
     color: #141414;
@@ -190,7 +223,15 @@ form#sign_up_div input {
     margin-bottom: 30px;
 }
 
+#login_div .soninpt {
+    margin-bottom: 30px;
+}
+
 .left form#sign_up_div input {
+    border-bottom: 1px solid #45494C;
+}
+
+.left form#login_div input {
     border-bottom: 1px solid #45494C;
 }
 
@@ -237,7 +278,43 @@ form#sign_up_div .mainbtn {
     border: 0;
 }
 
+form#login_div .mainbtn {
+    width: auto;
+    float: right;
+    background: #141414;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 !important;
+    line-height: 16px;
+    font-family: Roboto;
+    text-transform: uppercase;
+    max-height: 36px;
+    height: 36px;
+    letter-spacing: 0.5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-property: background-color,-webkit-box-shadow;
+    transition-property: background-color,box-shadow;
+    border: 0;
+}
+
+
 form#sign_up_div .mainbtn:hover {
+    -webkit-box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+}
+
+form#login_div .mainbtn:hover {
     -webkit-box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
     box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
@@ -248,8 +325,14 @@ form#sign_up_div .su {
   color: #141414;
 }
 
-form#sign_up_div .su:hover {
+form#login_div .su {
+  background: #eaeaea;
+  color: #141414;
+}
 
+form#login .su {
+  background: #eaeaea;
+  color: #141414;
 }
 
 #moveleft {

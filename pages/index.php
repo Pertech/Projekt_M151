@@ -67,7 +67,7 @@
            </div>
            <div class="form-group">
               <label class="control-label" for="inputNormal">Confirm Password</label>
-              <input type="password" name="signup_password2" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="password" name="signup_password2" id="signup_password2" class="bp-suggestions form-control" cols="50" rows="10" required></input>
            </div>
            <input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="mainbtn su"/>
 
@@ -87,7 +87,7 @@
        ?>
       <h2>Login</h2>
       <p>Welcome back!</p>
-      <form name="login-form" id="sign_up_div" id="sidebar-user-login" method="post" action="../php/login.php">
+      <form name="login-form" id="login_div" method="post" action="../php/login.php">
 
         <div class="form-group lg">
           <label class="control-label" for="inputNormal">Username</label>
