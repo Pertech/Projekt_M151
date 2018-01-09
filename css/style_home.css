@@ -4,6 +4,10 @@ html, body {
     font-family: Roboto;
 }
 
+#adminIcon {
+  padding-top: 10px;
+}
+
 #homeBtn {
   background: grey;
 }
