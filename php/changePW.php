@@ -7,7 +7,7 @@ if(isset($_POST['newPassword1']) && !empty(trim($_POST['newPassword1']))){
   $newPassword1 = trim($_POST['newPassword1']);
   //entspricht das passwort unseren vorgaben? (minimal 8 Zeichen, Zahlen, Buchstaben, keine Zeilenumbrüche, mindestens ein Gross- und ein Kleinbuchstabe)
   if(!preg_match("/(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/", $_POST['newPassword1'])){
-    $_SESSION['errMsg'] .= "Das Passwort entspricht nicht dem geforderten Format.<br />";
+    $_SESSION['errMsg'] .= "Das Passwort muss mindestens 8 Zeichen, eine Zahl und Gross -und Kleinschreibung beinhalten.<br />";
   }
 } else {
   // Ausgabe Fehlermeldung
