@@ -46,7 +46,10 @@
       <form action="../php/useKey.php" method="post">
         <div class="form-group">
           <label class="control-label" for="inputNormal">Key</label>
-          <input type="text" name="betakey" id="betakey" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+          <input type="text" name="betakey" id="betakey" class="bp-suggestions form-control" cols="50" rows="10"
+          maxlength="15"
+          pattern="[a-zA-Z0-9]{15}"
+          title="Gross- und Keinbuchstaben, min 6 Zeichen."required></input>
         </div>
         <input type="submit" name="" value="Redeem Key">
       </form>

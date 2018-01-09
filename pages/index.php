@@ -49,27 +49,32 @@
 
             <div class="form-group">
               <label class="control-label" for="inputNormal">Username</label>
-              <input type="text" name="signup_username" id="signup_username" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="text" name="signup_username" id="signup_username" class="bp-suggestions form-control" cols="50" rows="10"
+                maxlength="30"
+                pattern="(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{6,}"
+                title="Gross- und Keinbuchstaben, min 6 Zeichen." required></input>
             </div>
             <div class="form-group">
               <label class="control-label" for="inputNormal">First Name</label>
-              <input type="text" name="signup_firstname" id="signup_firstname" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="text" name="signup_firstname" id="signup_firstname" class="bp-suggestions form-control" cols="50" rows="10" maxlength="30" required></input>
             </div>
             <div class="form-group">
               <label class="control-label" for="inputNormal">Last Name</label>
-              <input type="text" name="signup_lastname" id="signup_lastname" class="bp-suggestions form-control" cols="50" rows="10"></input>
+              <input type="text" name="signup_lastname" id="signup_lastname" class="bp-suggestions form-control" cols="50" rows="10" maxlength="30" required></input>
             </div>
             <div class="form-group">
               <label class="control-label" for="inputNormal">Email</label>
-              <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10" maxlength="100" required></input>
            </div>
            <div class="form-group">
               <label class="control-label" for="inputNormal">Password</label>
-              <input type="password" name="signup_password" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="password" name="signup_password" id="signup_password" class="bp-suggestions form-control" cols="50" rows="10" pattern="(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                  title="mindestens einen Gross-, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen, mindestens 8 Zeichen lang,keine Umlaute." required></input>
            </div>
            <div class="form-group">
               <label class="control-label" for="inputNormal">Confirm Password</label>
-              <input type="password" name="signup_password2" id="signup_password2" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+              <input type="password" name="signup_password2" id="signup_password2" class="bp-suggestions form-control" cols="50" rows="10" pattern="(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                  title="mindestens einen Gross-, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen, mindestens 8 Zeichen lang,keine Umlaute." required></input>
            </div>
            <input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="mainbtn su"/>
 

@@ -50,11 +50,13 @@
         </div>
         <div class="form-group">
            <label class="control-label" for="inputNormal">New password</label>
-           <input type="password" name="newPassword1" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+           <input type="password" name="newPassword1" class="bp-suggestions form-control" cols="50" rows="10" pattern="(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+               title="mindestens einen Gross-, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen, mindestens 8 Zeichen lang,keine Umlaute." required></input>
         </div>
         <div class="form-group">
            <label class="control-label" for="inputNormal">Reenter new password</label>
-           <input type="password" name="newPassword2" class="bp-suggestions form-control" cols="50" rows="10" required></input>
+           <input type="password" name="newPassword2" class="bp-suggestions form-control" cols="50" rows="10" pattern="(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+               title="mindestens einen Gross-, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen, mindestens 8 Zeichen lang,keine Umlaute." required></input>
         </div>
         <input type="submit" name="" value="Submit">
       </form>
