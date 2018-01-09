@@ -45,7 +45,7 @@ $firstname = $lastname = $email = $username = '';
       $signup_username = trim($_POST['signup_username']);
       // entspricht der benutzername unseren vogaben (minimal 6 Zeichen, Gross- und Kleinbuchstaben)
   		if(!preg_match("/(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{6,}/", $_POST['signup_username'])){
-  			$_SESSION['errMsg'] .= "Der Benutzername entspricht nicht dem geforderten Format.<br />";
+  			$_SESSION['errMsg'] .= "Der Benutzername muss minmal 6 Zeichen und Gross -und Kleinschreibung beinhalten.<br />";
   		}
     } else {
       // Ausgabe Fehlermeldung
@@ -57,7 +57,7 @@ $firstname = $lastname = $email = $username = '';
       $signup_password = trim($_POST['signup_password']);
       //entspricht das passwort unseren vorgaben? (minimal 8 Zeichen, Zahlen, Buchstaben, keine Zeilenumbrüche, mindestens ein Gross- und ein Kleinbuchstabe)
       if(!preg_match("/(?=^.{8,}$)((?=.*\d+)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/", $_POST['signup_password'])){
-        $_SESSION['errMsg'] .= "Das Passwort entspricht nicht dem geforderten Format.<br />";
+        $_SESSION['errMsg'] .= "Passwort muss minimal 8 Zeichen, eine Zahl, ein Sonderzeichen und Gross -und Kleinschreibung beinhalten.<br />";
       }
     } else {
       // Ausgabe Fehlermeldung
